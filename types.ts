@@ -1,4 +1,3 @@
-
 export interface InputState {
   monthlyFee: number;
   registrationFee: number;
@@ -12,6 +11,13 @@ export interface InputState {
   assistantSalary: number;
   materialsPerChild: number;
   snacksPerChild: number;
+  birthdaysPerMonth: number;
+  revenuePerBirthday: number;
+  adultWorkshopFee: number;
+  adultAttendees: number;
+  merchandiseSales: number;
+  merchandiseProfitMargin: number;
+  startupCosts: number;
 }
 
 export interface BreakEvenDataPoint {
@@ -32,6 +38,8 @@ export interface KeyMetrics {
   monthlyProfit: number;
   annualProfit: number;
   profitMargin: number;
+  paybackPeriod: string | null;
+  returnOnInvestment: number;
 }
 
 export interface CalculationResults {

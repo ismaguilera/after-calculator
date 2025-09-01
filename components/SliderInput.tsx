@@ -1,5 +1,6 @@
-
 import React from 'react';
+import Tooltip from './Tooltip';
+import InfoIcon from './icons/InfoIcon';
 
 interface SliderInputProps {
   label: string;
@@ -9,12 +10,20 @@ interface SliderInputProps {
   max: number;
   step: number;
   unit?: string;
+  tooltipText?: string;
 }
 
-const SliderInput: React.FC<SliderInputProps> = ({ label, value, onChange, min, max, step, unit = '' }) => {
+const SliderInput: React.FC<SliderInputProps> = ({ label, value, onChange, min, max, step, unit = '', tooltipText }) => {
   return (
     <div>
-      <label className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-1">{label}</label>
+      <div className="flex items-center gap-2 mb-1">
+        <label className="block text-sm font-medium text-slate-600 dark:text-slate-400">{label}</label>
+        {tooltipText && (
+          <Tooltip text={tooltipText}>
+            <InfoIcon className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+          </Tooltip>
+        )}
+      </div>
       <div className="flex items-center space-x-4">
         <input
           type="range"

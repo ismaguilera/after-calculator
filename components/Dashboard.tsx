@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { CalculationResults } from '../types';
 import MetricCard from './MetricCard';
 import BreakEvenChart from './BreakEvenChart';
@@ -14,6 +14,7 @@ const formatCurrency = (value: number) => {
 };
 
 const Dashboard: React.FC<DashboardProps> = ({ calculations }) => {
+  const { t } = useTranslation();
   const { keyMetrics, breakEvenData, projectionData } = calculations;
   const [activeTab, setActiveTab] = useState<'metrics' | 'graphs'>('metrics');
 
@@ -37,7 +38,7 @@ const Dashboard: React.FC<DashboardProps> = ({ calculations }) => {
             onClick={() => setActiveTab('metrics')}
             className={getTabClass('metrics')}
           >
-            Key Metrics
+            {t('dashboard.tabs.metrics')}
           </button>
           <button
             id="tab-graphs"
@@ -47,7 +48,7 @@ const Dashboard: React.FC<DashboardProps> = ({ calculations }) => {
             onClick={() => setActiveTab('graphs')}
             className={getTabClass('graphs')}
           >
-            Graphs
+            {t('dashboard.tabs.graphs')}
           </button>
         </nav>
       </div>
@@ -55,29 +56,40 @@ const Dashboard: React.FC<DashboardProps> = ({ calculations }) => {
       <div className="p-4 sm:p-6">
         {activeTab === 'metrics' && (
           <div role="tabpanel" id="tabpanel-metrics" aria-labelledby="tab-metrics">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <MetricCard 
-                title="Break-Even Point" 
-                value={keyMetrics.breakEvenPoint ? `${keyMetrics.breakEvenPoint} Children` : 'N/A'}
-                description="Children needed to cover all costs."
+                title={t('dashboard.metrics.breakEven.title')}
+                value={keyMetrics.breakEvenPoint ? t('dashboard.metrics.breakEven.value', { count: keyMetrics.breakEvenPoint }) : t('common.na')}
+                description={t('dashboard.metrics.breakEven.description')}
               />
               <MetricCard 
-                title="Monthly Profit/Loss" 
+                title={t('dashboard.metrics.monthlyProfit.title')}
                 value={formatCurrency(keyMetrics.monthlyProfit)}
-                description="At target enrollment."
+                description={t('dashboard.metrics.monthlyProfit.description')}
                 isPositive={keyMetrics.monthlyProfit >= 0}
               />
               <MetricCard 
-                title="Annual Projected Profit" 
+                title={t('dashboard.metrics.annualProfit.title')}
                 value={formatCurrency(keyMetrics.annualProfit)}
-                description="Total profit after 12 months."
+                description={t('dashboard.metrics.annualProfit.description')}
                 isPositive={keyMetrics.annualProfit >= 0}
               />
               <MetricCard 
-                title="Profit Margin" 
+                title={t('dashboard.metrics.profitMargin.title')}
                 value={`${keyMetrics.profitMargin.toFixed(1)}%`}
-                description="Monthly profit as % of revenue."
+                description={t('dashboard.metrics.profitMargin.description')}
                 isPositive={keyMetrics.profitMargin >= 0}
+              />
+               <MetricCard 
+                title={t('dashboard.metrics.paybackPeriod.title')}
+                value={keyMetrics.paybackPeriod ?? t('common.na')}
+                description={t('dashboard.metrics.paybackPeriod.description')}
+              />
+              <MetricCard 
+                title={t('dashboard.metrics.roi.title')}
+                value={`${keyMetrics.returnOnInvestment.toFixed(1)}%`}
+                description={t('dashboard.metrics.roi.description')}
+                isPositive={keyMetrics.returnOnInvestment >= 0}
               />
             </div>
           </div>
@@ -87,12 +99,12 @@ const Dashboard: React.FC<DashboardProps> = ({ calculations }) => {
           <div role="tabpanel" id="tabpanel-graphs" aria-labelledby="tab-graphs">
             <div className="grid grid-cols-1 gap-6 lg:gap-8">
               <section>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Break-Even Analysis</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t('dashboard.charts.breakEven')}</h2>
                 <BreakEvenChart data={breakEvenData} breakEvenPoint={keyMetrics.breakEvenPoint} />
               </section>
 
               <section>
-                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">12-Month Profitability Projection</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t('dashboard.charts.projection')}</h2>
                 <ProjectionChart data={projectionData} />
               </section>
             </div>

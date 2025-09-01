@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { InputState } from './types';
 import ControlPanel from './components/ControlPanel';
 import Dashboard from './components/Dashboard';
@@ -8,22 +8,32 @@ import Logo from './components/icons/Logo';
 import ThemeToggle from './components/ThemeToggle';
 import GitHubIcon from './components/icons/GitHubIcon';
 import Footer from './components/Footer';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 
 const App: React.FC = () => {
+  const { t } = useTranslation();
+  const [isControlPanelOpen, setIsControlPanelOpen] = useState(true);
   const [inputs, setInputs] = useState<InputState>({
-    monthlyFee: 350,
-    registrationFee: 100,
+    monthlyFee: 250,
+    registrationFee: 50,
     targetChildren: 25,
     assistantRatio: 10,
     monthlyGrowth: 5,
-    rent: 2000,
-    utilities: 400,
-    insurance: 150,
-    otherFixedCosts: 250,
-    assistantSalary: 2500,
-    materialsPerChild: 30,
-    snacksPerChild: 40,
+    rent: 1500,
+    utilities: 150,
+    insurance: 50,
+    otherFixedCosts: 50,
+    assistantSalary: 600,
+    materialsPerChild: 20,
+    snacksPerChild: 20,
+    birthdaysPerMonth: 2,
+    revenuePerBirthday: 300,
+    adultWorkshopFee: 20,
+    adultAttendees: 10,
+    merchandiseSales: 150,
+    merchandiseProfitMargin: 40,
+    startupCosts: 2000,
   });
 
   const calculations = useFinancialCalculations(inputs);
@@ -37,14 +47,15 @@ const App: React.FC = () => {
                     <Logo />
                     <div>
                         <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-                            After-School Program Modeler
+                            {t('header.title')}
                         </h1>
                         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-                            Financial viability calculator
+                            {t('header.subtitle')}
                         </p>
                     </div>
                 </div>
                 <div className="flex items-center gap-2 sm:gap-4">
+                    <LanguageSwitcher />
                     <a 
                         href="https://github.com/google/aistudio"
                         target="_blank" 
@@ -62,7 +73,12 @@ const App: React.FC = () => {
 
       <main className="container mx-auto p-4 sm:p-6 lg:p-8 flex-grow">
         <div className="flex flex-col gap-6 lg:gap-8">
-            <ControlPanel inputs={inputs} setInputs={setInputs} />
+            <ControlPanel 
+              inputs={inputs} 
+              setInputs={setInputs} 
+              isOpen={isControlPanelOpen} 
+              setIsOpen={setIsControlPanelOpen} 
+            />
             <Dashboard calculations={calculations} />
         </div>
       </main>
