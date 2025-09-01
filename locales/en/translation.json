@@ -1,0 +1,126 @@
+{
+  "header": {
+    "title": "After-School Program Modeler",
+    "subtitle": "Financial viability calculator"
+  },
+  "footer": {
+    "text": "Built by a world-class senior frontend engineer."
+  },
+  "controlPanel": {
+    "title": "Control Panel",
+    "togglePanelOpen": "Collapse Control Panel",
+    "togglePanelClosed": "Expand Control Panel",
+    "revenueModel": {
+      "title": "Revenue Model",
+      "monthlyFee": "Monthly Fee per Child",
+      "registrationFee": "Registration Fee"
+    },
+    "additionalRevenue": {
+      "title": "Additional Revenue Streams",
+      "birthdaysPerMonth": "Weekend Birthdays / Month",
+      "revenuePerBirthday": "Revenue per Birthday",
+      "adultWorkshopFee": "Adult Workshop Fee",
+      "adultsPerWorkshop": "Adults per Workshop",
+      "merchandiseSales": "Monthly Merchandise Sales",
+      "merchandiseProfitMargin": "Merchandise Profit Margin"
+    },
+    "operationalParams": {
+      "title": "Operational Parameters",
+      "targetChildren": "Target Children",
+      "assistantRatio": "Assistant to Child Ratio",
+      "monthlyGrowth": "Monthly Growth"
+    },
+    "fixedCosts": {
+      "title": "Monthly Fixed Costs",
+      "rent": "Facility Rent",
+      "utilities": "Utilities",
+      "insurance": "Insurance",
+      "otherCosts": "Other Costs"
+    },
+    "variableCosts": {
+      "title": "Monthly Variable Costs",
+      "assistantSalary": "Assistant's Salary",
+      "materialsPerChild": "Materials per Child",
+      "snacksPerChild": "Snacks per Child"
+    },
+    "startupCosts": {
+      "title": "Startup Costs",
+      "total": "Total Initial Investment"
+    },
+    "tooltips": {
+      "monthlyFee": "The primary monthly tuition fee charged per child.",
+      "registrationFee": "A one-time fee charged upon a child's enrollment, factored into the first month's revenue for new children.",
+      "targetChildren": "The initial number of children enrolled in the program. This is the baseline for projections.",
+      "assistantRatio": "The maximum number of children one assistant can supervise. A new assistant is automatically hired when this ratio is exceeded.",
+      "monthlyGrowth": "The projected percentage increase in student enrollment each month. Used for the 12-month forecast.",
+      "rent": "The monthly cost for the physical space or facility.",
+      "utilities": "Estimated monthly costs for electricity, water, internet, etc.",
+      "insurance": "The monthly insurance premium for the business.",
+      "otherCosts": "Any other recurring monthly costs (e.g., software, cleaning services, subscriptions).",
+      "assistantSalary": "The gross monthly salary for one full-time assistant.",
+      "materialsPerChild": "The estimated monthly cost for consumable materials per child (e.g., art supplies, worksheets).",
+      "snacksPerChild": "The estimated monthly cost of snacks and food per child.",
+      "birthdaysPerMonth": "The average number of birthday parties hosted on weekends per month.",
+      "revenuePerBirthday": "The average revenue generated from a single birthday party event.",
+      "adultWorkshopFee": "The admission fee per person for special workshops or classes for adults.",
+      "adultsPerWorkshop": "The average number of adults attending a single workshop.",
+      "merchandiseSales": "Total monthly sales amount from merchandise like toys or t-shirts.",
+      "merchandiseProfitMargin": "The percentage of merchandise sales that is profit. The rest is considered cost of goods sold.",
+      "startupCosts": "The total one-time costs to start the business (e.g., furniture, deposits, licenses). This is used to calculate ROI."
+    }
+  },
+  "dashboard": {
+    "tabs": {
+      "metrics": "Key Metrics",
+      "graphs": "Graphs"
+    },
+    "metrics": {
+      "breakEven": {
+        "title": "Break-Even Point",
+        "description": "Children needed to cover all costs.",
+        "value": "{{count}} Children"
+      },
+      "monthlyProfit": {
+        "title": "Monthly Profit/Loss",
+        "description": "At target enrollment."
+      },
+      "annualProfit": {
+        "title": "Annual Projected Profit",
+        "description": "Total profit after 12 months (before startup costs)."
+      },
+      "profitMargin": {
+        "title": "Profit Margin",
+        "description": "Monthly profit as % of revenue."
+      },
+      "paybackPeriod": {
+        "title": "Payback Period",
+        "description": "Time to recoup initial investment.",
+        "value": "{{count}} Months"
+      },
+      "roi": {
+        "title": "Return on Investment (ROI)",
+        "description": "Annual profit as % of startup costs."
+      }
+    },
+    "charts": {
+      "breakEven": "Break-Even Analysis",
+      "projection": "12-Month Profitability Projection"
+    }
+  },
+  "charts": {
+    "children": "Children",
+    "numChildren": "Number of Children",
+    "amount": "Amount ($)",
+    "revenue": "Total Revenue",
+    "costs": "Total Costs",
+    "profit": "Profit/Loss",
+    "bep": "BEP: {{count}}",
+    "month": "Month",
+    "monthlyProfit": "Monthly Profit",
+    "cumulativeProfit": "Cumulative Profit",
+    "monthLabel": "Month {{monthNum}}"
+  },
+  "common": {
+    "na": "N/A"
+  }
+}

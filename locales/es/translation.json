@@ -1,0 +1,126 @@
+{
+  "header": {
+    "title": "Proyección Financiera Casa Taller",
+    "subtitle": "Calculadora de viabilidad financiera"
+  },
+  "footer": {
+    "text": "Creado por un ingeniero frontend senior de clase mundial."
+  },
+  "controlPanel": {
+    "title": "Panel de Control",
+    "togglePanelOpen": "Ocultar Panel de Control",
+    "togglePanelClosed": "Mostrar Panel de Control",
+    "revenueModel": {
+      "title": "Modelo de Ingresos",
+      "monthlyFee": "Cuota Mensual por Niño",
+      "registrationFee": "Cuota de Inscripción"
+    },
+    "additionalRevenue": {
+      "title": "Fuentes de Ingresos Adicionales",
+      "birthdaysPerMonth": "Cumpleaños de Fin de Semana / Mes",
+      "revenuePerBirthday": "Ingresos por Cumpleaños",
+      "adultWorkshopFee": "Costo del Taller para Adultos",
+      "adultsPerWorkshop": "Adultos por Taller",
+      "merchandiseSales": "Ventas Mensuales de Mercancía",
+      "merchandiseProfitMargin": "Margen de Ganancia de Mercancía"
+    },
+    "operationalParams": {
+      "title": "Parámetros Operativos",
+      "targetChildren": "Objetivo de Niños",
+      "assistantRatio": "Ratio Asistente por Niño",
+      "monthlyGrowth": "Crecimiento Mensual"
+    },
+    "fixedCosts": {
+      "title": "Costos Fijos Mensuales",
+      "rent": "Arriendo de Instalaciones",
+      "utilities": "Servicios Públicos",
+      "insurance": "Seguro",
+      "otherCosts": "Otros Costos"
+    },
+    "variableCosts": {
+      "title": "Costos Variables Mensuales",
+      "assistantSalary": "Salario del Asistente",
+      "materialsPerChild": "Materiales por Niño",
+      "snacksPerChild": "Refrigerios por Niño"
+    },
+    "startupCosts": {
+      "title": "Costos de Puesta en Marcha",
+      "total": "Inversión Inicial Total"
+    },
+    "tooltips": {
+      "monthlyFee": "La cuota de matrícula mensual principal que se cobra por cada niño.",
+      "registrationFee": "Una cuota única que se cobra al inscribir a un niño, se incluye en los ingresos del primer mes para los niños nuevos.",
+      "targetChildren": "El número inicial de niños inscritos en el programa. Esta es la base para las proyecciones.",
+      "assistantRatio": "El número máximo de niños que un asistente puede supervisar. Se contrata un nuevo asistente automáticamente cuando se supera este ratio.",
+      "monthlyGrowth": "El aumento porcentual proyectado en la inscripción de estudiantes cada mes. Se utiliza para la previsión a 12 meses.",
+      "rent": "El costo mensual del espacio físico o de las instalaciones.",
+      "utilities": "Costos mensuales estimados de electricidad, agua, internet, etc.",
+      "insurance": "La prima de seguro mensual para el negocio.",
+      "otherCosts": "Cualquier otro costo mensual recurrente (por ejemplo, software, servicios de limpieza, suscripciones).",
+      "assistantSalary": "El salario bruto mensual de un asistente a tiempo completo.",
+      "materialsPerChild": "El costo mensual estimado de materiales consumibles por niño (por ejemplo, materiales de arte, hojas de trabajo).",
+      "snacksPerChild": "El costo mensual estimado de refrigerios y alimentos por niño.",
+      "birthdaysPerMonth": "El número promedio de fiestas de cumpleaños organizadas los fines de semana por mes.",
+      "revenuePerBirthday": "Los ingresos promedio generados por un solo evento de fiesta de cumpleaños.",
+      "adultWorkshopFee": "La tarifa de admisión por persona para talleres o clases especiales para adultos.",
+      "adultsPerWorkshop": "El número promedio de adultos que asisten a un solo taller.",
+      "merchandiseSales": "El monto total de ventas mensuales de mercancía como juguetes o camisetas.",
+      "merchandiseProfitMargin": "El porcentaje de las ventas de mercancía que es ganancia. El resto se considera costo de los bienes vendidos.",
+      "startupCosts": "Los costos totales únicos para iniciar el negocio (por ejemplo, mobiliario, depósitos, licencias). Se utiliza para calcular el ROI."
+    }
+  },
+  "dashboard": {
+    "tabs": {
+      "metrics": "Métricas Clave",
+      "graphs": "Gráficos"
+    },
+    "metrics": {
+      "breakEven": {
+        "title": "Punto de Equilibrio",
+        "description": "Niños necesarios para cubrir todos los costos.",
+        "value": "{{count}} Niños"
+      },
+      "monthlyProfit": {
+        "title": "Ganancia/Pérdida Mensual",
+        "description": "Con el objetivo de inscripción."
+      },
+      "annualProfit": {
+        "title": "Ganancia Anual Proyectada",
+        "description": "Ganancia total después de 12 meses (sin costos iniciales)."
+      },
+      "profitMargin": {
+        "title": "Margen de Ganancia",
+        "description": "Ganancia mensual como % de ingresos."
+      },
+      "paybackPeriod": {
+        "title": "Período de Recuperación",
+        "description": "Tiempo para recuperar la inversión inicial.",
+        "value": "{{count}} Meses"
+      },
+      "roi": {
+        "title": "Retorno de la Inversión (ROI)",
+        "description": "Ganancia anual como % de los costos iniciales."
+      }
+    },
+    "charts": {
+      "breakEven": "Análisis de Punto de Equilibrio",
+      "projection": "Proyección de Rentabilidad a 12 Meses"
+    }
+  },
+  "charts": {
+    "children": "Niños",
+    "numChildren": "Número de Niños",
+    "amount": "Monto ($)",
+    "revenue": "Ingresos Totales",
+    "costs": "Costos Totales",
+    "profit": "Ganancia/Pérdida",
+    "bep": "PE: {{count}}",
+    "month": "Mes",
+    "monthlyProfit": "Ganancia Mensual",
+    "cumulativeProfit": "Ganancia Acumulada",
+    "monthLabel": "Mes {{monthNum}}"
+  },
+  "common": {
+    "na": "N/D"
+  }
+}
