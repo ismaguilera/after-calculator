@@ -30,7 +30,7 @@ const SliderInput: React.FC<SliderInputProps> = ({ label, value, onChange, min, 
             type="number"
             value={value}
             onChange={(e) => onChange(Number(e.target.value))}
-            className="w-full px-2 py-1 text-center bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-2 py-1 text-center bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-slate-900"
             min={min}
             max={max}
             step={step}

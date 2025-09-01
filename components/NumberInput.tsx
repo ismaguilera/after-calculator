@@ -18,7 +18,7 @@ const NumberInput: React.FC<NumberInputProps> = ({ label, value, onChange, unit 
           type="number"
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
-          className={`w-full py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-900 focus:ring-blue-500 focus:border-blue-500 ${unit === '$' ? 'pl-7' : 'px-3'}`}
+          className={`w-full py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-slate-800 ${unit === '$' ? 'pl-7' : 'px-3'}`}
           min={0}
         />
       </div>
