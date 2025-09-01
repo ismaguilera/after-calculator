@@ -1,0 +1,5 @@
+{
+  "name": "After-School Care Financial Modeler",
+  "description": "An interactive web application to serve as a financial modeling and economic evaluation tool for an after-school care program. Users can input various financial and operational parameters to generate dynamic graphs and key performance indicators, assessing the program's viability.",
+  "requestFramePermissions": []
+}
