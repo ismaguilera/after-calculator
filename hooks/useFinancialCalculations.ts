@@ -100,7 +100,7 @@ export const useFinancialCalculations = (inputs: InputState): CalculationResults
         const monthlyProfit = targetDataPoint.profit;
         const profitMargin = targetDataPoint.revenue > 0 ? (monthlyProfit / targetDataPoint.revenue) * 100 : 0;
 
-        const annualProfit = projectionData[11]?.cumulativeProfit + startupCosts ?? 0;
+        const annualProfit = projectionData[11] ? projectionData[11].cumulativeProfit + startupCosts : 0;
         
         const paybackMonthIndex = projectionData.findIndex(d => d.cumulativeProfit >= 0);
         const paybackPeriod = paybackMonthIndex !== -1 ? t('dashboard.metrics.paybackPeriod.value', { count: paybackMonthIndex + 1 }) : null;
